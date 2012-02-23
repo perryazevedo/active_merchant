@@ -29,7 +29,7 @@ class UsaEpayAdvancedTest < Test::Unit::TestCase
     )
 
     @check = ActiveMerchant::Billing::Check.new(
-      :number => '123456789012',
+      :account_number => '123456789012',
       :routing_number => '123456789',
       :account_type => 'checking',
       :first_name => "Fred",
