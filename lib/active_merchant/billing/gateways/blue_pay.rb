@@ -309,7 +309,7 @@ module ActiveMerchant #:nodoc:
       end
 
       def success?(response)
-       	if (response['STATUS'] == '1' || message_from(response) =~ /approved/ || response.has_key?('rebill_id') || response[RESPONSE_REASON_TEXT] =~ /approved/) 
+       	if (response['STATUS'] == '1' || message_from(response) =~ /approved/i || response.has_key?('rebill_id') || response[RESPONSE_REASON_TEXT] =~ /approved/i) 
 		  return true
 		else 
 		  return false
