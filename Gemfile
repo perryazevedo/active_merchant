@@ -1,20 +1,10 @@
-source :rubygems
+source 'https://rubygems.org'
 gemspec
 
-group :test do
-  gem 'json-jruby', :platforms => :jruby
-  gem 'jruby-openssl', :platforms => :jruby
+gem 'jruby-openssl', :platforms => :jruby
 
+group :test, :remote_test do
   # gateway-specific dependencies, keeping these gems out of the gemspec
-  gem 'samurai', '>= 0.2.25'
+  # gem 'braintree', '>= 2.0.0'
+  gem 'braintree', github: "braintree/braintree_ruby", branch: "raw_apple_pay_preview" # for apple pay support in braintree
 end
-
-group :remote_test do
-  gem 'mechanize'
-  gem 'launchy'
-  gem 'mongrel', '1.2.0.pre2', :platforms => :ruby
-
-  # gateway-specific dependencies, keeping these gems out of the gemspec
-  gem 'samurai', '>= 0.2.25'
-end
-
